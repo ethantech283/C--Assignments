@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+// Function to calculate the electricity bill
+double calculateBill(int units)
+{
+    double bill = 0;
+
+    if (units <= 100)
+    {
+        bill = units * 10;
+    }
+    else if (units <= 200)
+    {
+        bill = (100 * 10) + ((units - 100) * 15);
+    }
+    else
+    {
+        bill = (100 * 10) + (100 * 15) + ((units - 200) * 20);
+    }
+
+    return bill;
+}
+
+int main()
+{
+    int units;
+    double bill;
+
+    cout << "Enter the number of units consumed: ";
+    cin >> units;
+
+    bill = calculateBill(units);
+
+    cout << "Number of units consumed: " << units << endl;
+    cout << "Total electricity bill: KSh " << bill << endl;
+
+    return 0;
+}
